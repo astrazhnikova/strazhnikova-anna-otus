@@ -20,25 +20,5 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+  console.log(`Сервер запущен http://${hostname}:${port}/`);
 });
-
-// const requestHandler = async (req, res) => {
-
-  // await new Promise (resolve => {
-    // setTimeout(() => {
-      // resolve();
-    // }, 10000);
-  // });
-
-  // res.statusCode = 200;
-  // res.end(req.method + " " + req.url);
-  // // console.log (req.method + " " + req.url);
-
-// }
-
-// const server = http.createServer(requestHandler);
-
-// server.listen(port, hostname, () => {
-	// console.log(`Server running at http://${hostname}:${port}/`);
-// });
