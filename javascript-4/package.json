@@ -1,0 +1,13 @@
+{
+  "name": "javascript-4",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "asynctest": "node request2.js 5 async",
+    "synctest": "node request2.js 5 sync"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
