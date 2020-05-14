@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Custom Elements Tree</title>
+  <script src="my-leaf.js"></script>
+  <script src="my-tree.js"></script>
+</head>
+<body>
+  
+  <my-tree id="my-tree"></my-tree>
+
+  <script>
+    const mydata = {
+                      "id": 1,
+                      "items": [{
+                        "id": 2,
+                        "items": [{
+                          "id": 3
+                        }]
+                      }]
+                    };
+      
+    
+    document.querySelector('#my-tree').setAttribute('data', JSON.stringify(mydata));
+  </script>
+</body>
+</html>
