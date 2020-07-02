@@ -1,0 +1,65 @@
+type Seller {
+	id: ID!
+	name: String!
+	license: Int!
+	info: String
+}
+
+type User {
+	id: ID!
+	name: String!
+	email: String!
+	phone: Int
+	cards: [Card!]
+}
+
+type Product {
+	id: ID!
+	name: String!
+	price: Float!
+	count: Int!
+	seller: Seller!
+	color: String
+	height: Float
+	width: Float
+}
+
+type Cart {
+	id: ID!
+	name: String!
+	number: Int!
+}
+
+type Order {
+	id: ID!
+	user: User!
+	product: Product!
+	count: Int!
+	price: Float!
+	payCard: Card!
+}
+
+type Mutation {
+  createUser(id: ID!,name: String!, email: String!): User!
+  updateUser(id: ID!,name: String!, email: String!): User!
+  deleteUser(id: Int!): User!
+
+  createProduct(id: ID!,name: String!,price: Float!,count: Int!,seller: CreateSellerInput!): Product
+  updateProduct(id: ID!,name: String!,price: Float!,count: Int!,seller: CreateSellerInput!,color: String,height: Float,width: Float): Product
+  deleteProduct(id:Int!): Product
+  
+  createOrder(id: ID!, user: User!,	product: Product!, count: Int!,	price: Float!, payCard: CreateCartInput!): Order
+  deleteOrder(id:Int!): Order
+}
+
+input CreateCartInput {
+	id: ID!
+	name: String!
+	number: Int!
+}
+
+input CreateSellerInput {
+	id: ID!
+	name: String!
+	license: Int!
+}
